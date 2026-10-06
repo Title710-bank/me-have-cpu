@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สั่งซื้อสำเร็จ | ME HAVE CPU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="success-page">
+
+    <header class="checkout-header">
+        <div class="logo">ME HAVE CPU</div>
+
+        <nav>
+            <a href="index.html">หน้าหลัก</a>
+            <a href="index.html">สินค้า</a>
+        </nav>
+
+        <div class="secure">
+            🔒 ระบบสั่งซื้อปลอดภัย
+        </div>
+    </header>
+
+
+    <main class="success-container">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>สั่งซื้อสำเร็จ!</h1>
+
+            <p class="success-message">
+                ขอบคุณสำหรับการสั่งซื้อสินค้ากับ ME HAVE CPU
+            </p>
+
+            <div class="order-number">
+                <span>เลขที่คำสั่งซื้อ</span>
+                <strong id="order-number">
+                    MHC-000000
+                </strong>
+            </div>
+
+            <div class="success-status">
+                <span>สถานะคำสั่งซื้อ</span>
+                <strong>รอตรวจสอบการชำระเงิน</strong>
+            </div>
+
+            <p class="delivery-message">
+                📦 ร้านค้าจะดำเนินการตรวจสอบคำสั่งซื้อ
+                และเตรียมจัดส่งสินค้าให้คุณ
+            </p>
+
+            <div class="success-buttons">
+
+                <a href="index.html" class="home-btn">
+                    🏠 กลับหน้าหลัก
+                </a>
+
+                <button
+                    class="print-btn"
+                    onclick="window.print()">
+                    🖨️ พิมพ์ใบสั่งซื้อ
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="checkout-footer">
+        <p>© 2026 ME HAVE CPU</p>
+        <p>ร้านจำหน่ายอุปกรณ์คอมพิวเตอร์และเกมมิ่งออนไลน์</p>
+    </footer>
+
+
+    <script>
+
+        const orderNumber =
+            localStorage.getItem("orderNumber");
+
+        if (orderNumber) {
+            document.getElementById("order-number")
+                .textContent = orderNumber;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้าสินค้า | ME HAVE CPU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ME HAVE CPU</div>
+
+    <nav>
+        <a href="index.html">หน้าหลัก</a>
+        <a href="index.html#products">สินค้า</a>
+    </nav>
+
+    <a href="cart.html" class="cart">
+        🛒 ตะกร้าสินค้า
+    </a>
+</header>
+
+<main class="cart-page">
+
+    <h1>🛒 ตะกร้าสินค้า</h1>
+
+    <div id="cart-items" class="cart-page-items">
+        <p>กำลังโหลดสินค้า...</p>
+    </div>
+
+    <div class="cart-page-bottom">
+
+        <div>
+            <span>ยอดรวม</span>
+            <strong>
+                <span id="cart-total">0</span> บาท
+            </strong>
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="goToCheckout()">
+            ดำเนินการสั่งซื้อ →
+        </button>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

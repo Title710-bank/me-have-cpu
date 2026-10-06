@@ -1,0 +1,948 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>รายละเอียดสินค้า - ME HAVE CPU</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.detail-wrap{
+    max-width:1100px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.detail-card{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+    padding:35px;
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:45px;
+}
+
+.detail-image{
+    height:350px;
+    border-radius:14px;
+    background:#f1f5fb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:120px;
+}
+
+.detail-info h1{
+    margin-top:0;
+    font-size:32px;
+}
+
+.price{
+    font-size:28px;
+    font-weight:700;
+    color:#2463eb;
+    margin:20px 0;
+}
+
+.detail-info p{
+    line-height:1.8;
+    color:#555;
+}
+
+.specs{
+    margin:15px 0 25px;
+    padding-left:25px;
+    line-height:2;
+}
+
+.spec-box{
+    background:#f7f9fc;
+    border-radius:12px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.spec-box h3{
+    margin-top:0;
+}
+
+.feature-box{
+    margin-top:25px;
+}
+
+.feature-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:0;
+    list-style:none;
+}
+
+.feature-list li{
+    background:#f1f5fb;
+    padding:12px;
+    border-radius:8px;
+}
+
+.status{
+    display:inline-block;
+    background:#e6f7ed;
+    color:#16803c;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.warranty{
+    background:#fff8e6;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+    color:#765900;
+}
+
+.btn-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.primary-btn,
+.back-btn{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    border:0;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.primary-btn{
+    background:#2463eb;
+    color:white;
+}
+
+.back-btn{
+    background:#e9eef8;
+    color:#1d3557;
+}
+
+.notice{
+    text-align:center;
+    padding:60px;
+}
+
+@media(max-width:700px){
+
+    .detail-card{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+
+    .detail-image{
+        height:230px;
+        font-size:90px;
+    }
+
+    .feature-list{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+ME HAVE CPU
+</div>
+
+<nav>
+
+<a href="index.html">หน้าหลัก</a>
+
+<a href="index.html#products">สินค้า</a>
+
+<a href="promotion.html">โปรโมชั่น</a>
+
+<a href="about.html">เกี่ยวกับเรา</a>
+
+<a href="contact.html">ติดต่อเรา</a>
+
+<a href="member.html">สมาชิก</a>
+
+</nav>
+
+<a href="cart.html" class="cart">
+🛒 ตะกร้า
+</a>
+
+</header>
+
+
+<!-- PRODUCT DETAIL -->
+
+<main class="detail-wrap">
+
+<div id="product"></div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 ME HAVE CPU |
+ร้านจำหน่ายอุปกรณ์คอมพิวเตอร์และเกมมิ่งออนไลน์
+</p>
+
+</footer>
+
+
+<script>
+
+
+const products = {
+
+
+/* ================= LG ================= */
+
+lg:{
+
+name:'LG Gaming Monitor',
+
+icon:'🖥️',
+
+price:6990,
+
+desc:'จอเกมมิ่ง LG ที่ออกแบบมาเพื่อการเล่นเกมและการใช้งานทั่วไป ให้ภาพคมชัด สีสันสวยงาม และช่วยให้ผู้ใช้งานได้รับประสบการณ์ในการรับชมภาพที่ดีขึ้น เหมาะสำหรับเกมเมอร์ นักเรียน นักศึกษา และผู้ใช้งานคอมพิวเตอร์ทั่วไป',
+
+features:[
+
+'ภาพคมชัด',
+
+'สีสันสวยงาม',
+
+'เหมาะสำหรับเล่นเกม',
+
+'เหมาะสำหรับใช้งานทั่วไป'
+
+],
+
+specs:[
+
+'แบรนด์: LG',
+
+'ประเภท: Gaming Monitor',
+
+'ขนาดหน้าจอ: 24 นิ้ว',
+
+'ความละเอียด: Full HD',
+
+'การเชื่อมต่อ: HDMI / DisplayPort',
+
+'เหมาะสำหรับ: เล่นเกมและทำงาน'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+
+},
+
+
+/* ================= SAMSUNG ================= */
+
+samsung:{
+
+name:'Samsung Gaming Monitor',
+
+icon:'🖥️',
+
+price:7490,
+
+desc:'จอเกมมิ่ง Samsung ที่มาพร้อมประสิทธิภาพการแสดงผลที่ลื่นไหล เหมาะสำหรับเกมเมอร์ที่ต้องการหน้าจอสำหรับเล่นเกม ดูหนัง และใช้งานคอมพิวเตอร์ในชีวิตประจำวัน',
+
+features:[
+
+'ภาพลื่นไหล',
+
+'สีสันคมชัด',
+
+'ดีไซน์ทันสมัย',
+
+'เหมาะสำหรับเกมเมอร์'
+
+],
+
+specs:[
+
+'แบรนด์: Samsung',
+
+'ประเภท: Gaming Monitor',
+
+'ขนาดหน้าจอ: 24 นิ้ว',
+
+'ความละเอียด: Full HD',
+
+'การเชื่อมต่อ: HDMI',
+
+'เหมาะสำหรับ: เล่นเกมและความบันเทิง'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= VIEWSONIC ================= */
+
+viewsonic:{
+
+name:'ViewSonic Gaming Monitor',
+
+icon:'🖥️',
+
+price:5790,
+
+desc:'จอเกมมิ่ง ViewSonic สำหรับผู้ใช้งานที่ต้องการหน้าจอคุณภาพดีสำหรับเล่นเกมและทำงาน ให้ภาพคมชัดและสามารถใช้งานได้หลากหลายรูปแบบ',
+
+features:[
+
+'ภาพคมชัด',
+
+'เหมาะสำหรับเล่นเกม',
+
+'ใช้งานได้หลากหลาย',
+
+'ดีไซน์ทันสมัย'
+
+],
+
+specs:[
+
+'แบรนด์: ViewSonic',
+
+'ประเภท: Gaming Monitor',
+
+'ขนาดหน้าจอ: 24 นิ้ว',
+
+'ความละเอียด: Full HD',
+
+'การเชื่อมต่อ: HDMI',
+
+'เหมาะสำหรับ: เล่นเกมและทำงาน'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= LOGITECH KEYBOARD ================= */
+
+'logitech-keyboard':{
+
+name:'Logitech Gaming Keyboard',
+
+icon:'⌨️',
+
+price:1590,
+
+desc:'คีย์บอร์ดเกมมิ่ง Logitech ที่ออกแบบมาสำหรับเกมเมอร์ ใช้งานได้ทั้งการเล่นเกมและการพิมพ์งาน พร้อมไฟ RGB ที่ช่วยเพิ่มความสวยงามให้กับโต๊ะคอมพิวเตอร์',
+
+features:[
+
+'ไฟ RGB',
+
+'ตอบสนองการกดได้ดี',
+
+'ดีไซน์สำหรับเกมเมอร์',
+
+'เหมาะสำหรับเล่นเกม'
+
+],
+
+specs:[
+
+'แบรนด์: Logitech',
+
+'ประเภท: Gaming Keyboard',
+
+'การเชื่อมต่อ: USB',
+
+'ระบบไฟ: RGB',
+
+'รูปแบบ: Full Size',
+
+'เหมาะสำหรับ: เล่นเกมและพิมพ์งาน'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= RAZER KEYBOARD ================= */
+
+'razer-keyboard':{
+
+name:'Razer Gaming Keyboard',
+
+icon:'⌨️',
+
+price:2490,
+
+desc:'คีย์บอร์ดเกมมิ่ง Razer ที่ออกแบบมาเพื่อการเล่นเกมโดยเฉพาะ ให้การกดปุ่มที่ตอบสนองรวดเร็ว พร้อมดีไซน์ที่โดดเด่นสำหรับโต๊ะเกมมิ่ง',
+
+features:[
+
+'ตอบสนองรวดเร็ว',
+
+'ดีไซน์เกมมิ่ง',
+
+'ไฟ RGB',
+
+'เหมาะสำหรับเกมเมอร์'
+
+],
+
+specs:[
+
+'แบรนด์: Razer',
+
+'ประเภท: Gaming Keyboard',
+
+'การเชื่อมต่อ: USB',
+
+'ระบบไฟ: RGB',
+
+'รูปแบบ: Full Size',
+
+'เหมาะสำหรับ: เล่นเกม'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= HYPERX KEYBOARD ================= */
+
+'hyperx-keyboard':{
+
+name:'HyperX Gaming Keyboard',
+
+icon:'⌨️',
+
+price:1990,
+
+desc:'คีย์บอร์ดเกมมิ่ง HyperX พร้อมไฟ RGB และดีไซน์ที่เหมาะสำหรับเกมเมอร์ สามารถใช้สำหรับเล่นเกมและการใช้งานทั่วไปได้อย่างสะดวก',
+
+features:[
+
+'ไฟ RGB',
+
+'ดีไซน์เกมมิ่ง',
+
+'กดปุ่มได้รวดเร็ว',
+
+'เหมาะสำหรับเล่นเกม'
+
+],
+
+specs:[
+
+'แบรนด์: HyperX',
+
+'ประเภท: Gaming Keyboard',
+
+'การเชื่อมต่อ: USB',
+
+'ระบบไฟ: RGB',
+
+'รูปแบบ: Full Size',
+
+'เหมาะสำหรับ: เกมเมอร์'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= LOGITECH MOUSE ================= */
+
+'logitech-mouse':{
+
+name:'Logitech Gaming Mouse',
+
+icon:'🖱️',
+
+price:1290,
+
+desc:'เมาส์เกมมิ่ง Logitech ที่ออกแบบมาเพื่อให้ควบคุมได้อย่างแม่นยำ เหมาะสำหรับเกมแนว FPS, MOBA และการใช้งานคอมพิวเตอร์ทั่วไป',
+
+features:[
+
+'ความแม่นยำสูง',
+
+'ตอบสนองรวดเร็ว',
+
+'จับถนัดมือ',
+
+'เหมาะสำหรับเล่นเกม'
+
+],
+
+specs:[
+
+'แบรนด์: Logitech',
+
+'ประเภท: Gaming Mouse',
+
+'การเชื่อมต่อ: USB',
+
+'ความแม่นยำ: สูง',
+
+'ปุ่มควบคุม: หลายปุ่ม',
+
+'เหมาะสำหรับ: เกมเมอร์'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= RAZER MOUSE ================= */
+
+'razer-mouse':{
+
+name:'Razer Gaming Mouse',
+
+icon:'🖱️',
+
+price:1790,
+
+desc:'เมาส์เกมมิ่ง Razer สำหรับเกมเมอร์ที่ต้องการความคล่องตัวในการควบคุม พร้อมการออกแบบที่เหมาะกับการเล่นเกมเป็นเวลานาน',
+
+features:[
+
+'ควบคุมได้คล่องตัว',
+
+'ตอบสนองรวดเร็ว',
+
+'ดีไซน์เกมมิ่ง',
+
+'เหมาะสำหรับเกม FPS'
+
+],
+
+specs:[
+
+'แบรนด์: Razer',
+
+'ประเภท: Gaming Mouse',
+
+'การเชื่อมต่อ: USB',
+
+'ความแม่นยำ: สูง',
+
+'ปุ่มควบคุม: หลายปุ่ม',
+
+'เหมาะสำหรับ: เกมเมอร์'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= STEELSERIES MOUSE ================= */
+
+'steelseries-mouse':{
+
+name:'SteelSeries Gaming Mouse',
+
+icon:'🖱️',
+
+price:1490,
+
+desc:'เมาส์เกมมิ่ง SteelSeries ที่มีการตอบสนองรวดเร็ว เหมาะสำหรับเกมเมอร์ที่ต้องการความแม่นยำและการควบคุมที่ดีในการเล่นเกม',
+
+features:[
+
+'ตอบสนองรวดเร็ว',
+
+'ควบคุมแม่นยำ',
+
+'ดีไซน์เกมมิ่ง',
+
+'เหมาะสำหรับเกมเมอร์'
+
+],
+
+specs:[
+
+'แบรนด์: SteelSeries',
+
+'ประเภท: Gaming Mouse',
+
+'การเชื่อมต่อ: USB',
+
+'ความแม่นยำ: สูง',
+
+'ปุ่มควบคุม: หลายปุ่ม',
+
+'เหมาะสำหรับ: เล่นเกม'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= LOGITECH HEADSET ================= */
+
+'logitech-headset':{
+
+name:'Logitech Gaming Headset',
+
+icon:'🎧',
+
+price:1990,
+
+desc:'หูฟังเกมมิ่ง Logitech ที่ให้เสียงคมชัด เหมาะสำหรับการเล่นเกม ดูหนัง ฟังเพลง และพูดคุยผ่านระบบเสียงออนไลน์',
+
+features:[
+
+'เสียงคมชัด',
+
+'สวมใส่สบาย',
+
+'เหมาะสำหรับเล่นเกม',
+
+'มีไมโครโฟน'
+
+],
+
+specs:[
+
+'แบรนด์: Logitech',
+
+'ประเภท: Gaming Headset',
+
+'การเชื่อมต่อ: USB / 3.5mm',
+
+'ระบบเสียง: Stereo',
+
+'มีไมโครโฟน: มี',
+
+'เหมาะสำหรับ: เกมเมอร์'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= RAZER HEADSET ================= */
+
+'razer-headset':{
+
+name:'Razer Gaming Headset',
+
+icon:'🎧',
+
+price:2490,
+
+desc:'หูฟังเกมมิ่ง Razer พร้อมระบบเสียงที่ช่วยเพิ่มประสบการณ์ในการเล่นเกม เหมาะสำหรับเกมเมอร์ที่ต้องการเสียงที่ชัดเจนและการสื่อสารที่ดี',
+
+features:[
+
+'เสียงรอบทิศทาง',
+
+'เสียงคมชัด',
+
+'มีไมโครโฟน',
+
+'ดีไซน์เกมมิ่ง'
+
+],
+
+specs:[
+
+'แบรนด์: Razer',
+
+'ประเภท: Gaming Headset',
+
+'การเชื่อมต่อ: USB / 3.5mm',
+
+'ระบบเสียง: Surround',
+
+'มีไมโครโฟน: มี',
+
+'เหมาะสำหรับ: เล่นเกม'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+},
+
+
+/* ================= HYPERX HEADSET ================= */
+
+'hyperx-headset':{
+
+name:'HyperX Gaming Headset',
+
+icon:'🎧',
+
+price:2190,
+
+desc:'หูฟังเกมมิ่ง HyperX ที่ให้เสียงชัดและเบสแน่น เหมาะสำหรับเกมเมอร์ที่ต้องการความสนุกและประสบการณ์เสียงที่ดีในการเล่นเกม',
+
+features:[
+
+'เสียงชัด',
+
+'เบสแน่น',
+
+'สวมใส่สบาย',
+
+'มีไมโครโฟน'
+
+],
+
+specs:[
+
+'แบรนด์: HyperX',
+
+'ประเภท: Gaming Headset',
+
+'การเชื่อมต่อ: USB / 3.5mm',
+
+'ระบบเสียง: Stereo',
+
+'มีไมโครโฟน: มี',
+
+'เหมาะสำหรับ: เกมเมอร์'
+
+],
+
+warranty:'รับประกันสินค้า 1 ปี'
+
+}
+
+};
+
+
+/* ================= แสดงข้อมูลสินค้า ================= */
+
+const key =
+new URLSearchParams(location.search).get('product');
+
+const p = products[key];
+
+const el =
+document.getElementById('product');
+
+
+if(!p){
+
+el.innerHTML = `
+
+<div class="notice">
+
+<h2>ไม่พบข้อมูลสินค้า</h2>
+
+<p>
+กรุณาเลือกสินค้าจากหน้าสินค้า
+</p>
+
+<a class="back-btn"
+href="index.html#products">
+
+← กลับไปหน้าสินค้า
+
+</a>
+
+</div>
+
+`;
+
+}else{
+
+el.innerHTML = `
+
+<div class="detail-card">
+
+    <div class="detail-image">
+
+        ${p.icon}
+
+    </div>
+
+
+    <div class="detail-info">
+
+        <span class="status">
+            ● มีสินค้า
+        </span>
+
+        <h1>
+            ${p.name}
+        </h1>
+
+
+        <p>
+            ${p.desc}
+        </p>
+
+
+        <div class="price">
+
+            ราคา ${p.price.toLocaleString()} บาท
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <h3>
+                ⭐ จุดเด่นสินค้า
+            </h3>
+
+            <ul class="feature-list">
+
+                ${p.features
+                .map(x => `<li>✓ ${x}</li>`)
+                .join('')}
+
+            </ul>
+
+        </div>
+
+
+        <div class="spec-box">
+
+            <h3>
+                📋 ข้อมูลจำเพาะ
+            </h3>
+
+            <ul class="specs">
+
+                ${p.specs
+                .map(x => `<li>${x}</li>`)
+                .join('')}
+
+            </ul>
+
+        </div>
+
+
+        <div class="warranty">
+
+            🛡️ <strong>การรับประกัน</strong>
+
+            <br>
+
+            ${p.warranty}
+
+            <br>
+
+            รับประกันสินค้าตามเงื่อนไขของร้าน ME HAVE CPU
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button
+                class="primary-btn"
+                onclick="addToCart('${p.name}', ${p.price})">
+
+                🛒 เพิ่มลงตะกร้า
+
+            </button>
+
+
+            <a
+                class="back-btn"
+                href="index.html#products">
+
+                ← กลับไปหน้าสินค้า
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+
+/* ================= เพิ่มสินค้าเข้าตะกร้า ================= */
+
+function addToCart(name,price){
+
+let cart =
+JSON.parse(localStorage.getItem('cart') || '[]');
+
+cart.push({
+
+name:name,
+
+price:price
+
+});
+
+localStorage.setItem(
+'cart',
+JSON.stringify(cart)
+);
+
+alert(
+'เพิ่ม ' + name + ' ลงตะกร้าแล้ว'
+);
+
+}
+
+</script>
+
+</body>
+</html>
+```
